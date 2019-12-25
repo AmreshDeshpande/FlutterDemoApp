@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:i_am_rich/models/quiz_brain.dart';
-
-import 'weather_page.dart';
+import 'package:i_am_rich/screens/price_screen.dart';
 
 QuizBrain quizBrain = QuizBrain();
 
@@ -10,7 +9,7 @@ void main() => runApp(MaterialApp(
           primaryColor: Color(0xFF0A0E21),
           scaffoldBackgroundColor: Color(0xFF0A0E21),
           accentColor: Colors.purple),
-      home: WeatherPage(),
+      home: PriceScreen(),
     )
 //      MaterialApp(
 //        home: Scaffold(
@@ -34,7 +33,7 @@ void main() => runApp(MaterialApp(
 //  @override
 //  Widget build(BuildContext context) {
 //    return MaterialApp(
-//        home: SafeArea(
+//        home: SafeA
 //      child: Row(
 //        mainAxisAlignment: MainAxisAlignment.spaceBetween,
 //        children: <Widget>[
