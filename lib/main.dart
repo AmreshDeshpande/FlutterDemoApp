@@ -1,16 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:i_am_rich/models/quiz_brain.dart';
-import 'package:i_am_rich/screens/price_screen.dart';
+import 'package:i_am_rich/screens/crypto_market.dart';
+import 'package:i_am_rich/screens/todolist/TaskData.dart';
+import 'package:i_am_rich/screens/todolist/TasksScreen.dart';
+import 'package:provider/provider.dart';
 
 QuizBrain quizBrain = QuizBrain();
 
-void main() => runApp(MaterialApp(
-      theme: ThemeData.dark().copyWith(
-          primaryColor: Color(0xFF0A0E21),
-          scaffoldBackgroundColor: Color(0xFF0A0E21),
-          accentColor: Colors.purple),
-      home: PriceScreen(),
-    )
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return ChangeNotifierProvider(
+      create: (context) => TaskData(),
+      child: MaterialApp(
+        theme: ThemeData.dark().copyWith(
+            primaryColor: Color(0xFF0A0E21),
+            scaffoldBackgroundColor: Color(0xFF0A0E21),
+            accentColor: Colors.purple),
+        home: TasksScreen(),
+      ),
+    );
+  }
+}
+
+
 //      MaterialApp(
 //        home: Scaffold(
 //          appBar: AppBar(
@@ -27,7 +42,7 @@ void main() => runApp(MaterialApp(
 //          ),
 //        ),
 //      ),
-        );
+//);
 
 //class GridWidget extends StatelessWidget {
 //  @override
