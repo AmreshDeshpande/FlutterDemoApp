@@ -9,10 +9,6 @@ class WeatherPage extends StatefulWidget {
 }
 
 class _WeatherPageState extends State<WeatherPage> {
-//  Position position;
-//  double latitude;
-//  double longitude;
-
   @override
   void initState() {
     super.initState();

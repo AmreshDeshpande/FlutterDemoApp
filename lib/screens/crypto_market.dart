@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'price_screen.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(CryptoScreen());
 
-class MyApp extends StatelessWidget {
+class CryptoScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

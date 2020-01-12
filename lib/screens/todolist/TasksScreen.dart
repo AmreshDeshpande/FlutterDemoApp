@@ -4,6 +4,8 @@ import 'package:i_am_rich/screens/todolist/TaskData.dart';
 import 'package:provider/provider.dart';
 
 class TasksScreen extends StatelessWidget {
+  static String id = 'task_screen';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
