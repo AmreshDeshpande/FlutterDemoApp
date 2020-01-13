@@ -7,7 +7,9 @@ class IAmRich extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: Text("I am Rich")),
+        automaticallyImplyLeading: true,
+        centerTitle: true,
+        title: Text("I am Rich"),
         backgroundColor: Colors.blueGrey[900],
       ),
       backgroundColor: Colors.blueGrey[500],

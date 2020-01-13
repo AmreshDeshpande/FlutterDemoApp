@@ -20,11 +20,14 @@ class _BMIFormPageState extends State<BMIFormPage> {
   int height = 180;
   int weight = 60;
   int age = 18;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: Text('BMI CALCULATOR')),
+        centerTitle: true,
+        automaticallyImplyLeading: true,
+        title: Text('BMI CALCULATOR'),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,

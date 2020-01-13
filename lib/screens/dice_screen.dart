@@ -20,36 +20,36 @@ class _DiceGameState extends State<DiceGame> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
+    return Scaffold(
+      backgroundColor: Colors.red,
+      appBar: AppBar(
+        automaticallyImplyLeading: true,
+        centerTitle: true,
+        title: Text('Dicee'),
         backgroundColor: Colors.red,
-        appBar: AppBar(
-          title: Center(child: Text('Dicee')),
-          backgroundColor: Colors.red,
-        ),
-        body: Center(
-          child: Row(
-            children: <Widget>[
-              Expanded(
-                child: FlatButton(
-                  child: Image.asset('images/dice$leftDiceNumber.png'),
-                  onPressed: () {
-                    changeDiceFace();
-                  },
-                ),
+      ),
+      body: Center(
+        child: Row(
+          children: <Widget>[
+            Expanded(
+              child: FlatButton(
+                child: Image.asset('images/dice$leftDiceNumber.png'),
+                onPressed: () {
+                  changeDiceFace();
+                },
               ),
-              Expanded(
-                child: FlatButton(
-                  child: Image.asset('images/dice$rightDiceNumber.png'),
-                  onPressed: () {
-                    setState(() {
-                      changeDiceFace();
-                    });
-                  },
-                ),
-              )
-            ],
-          ),
+            ),
+            Expanded(
+              child: FlatButton(
+                child: Image.asset('images/dice$rightDiceNumber.png'),
+                onPressed: () {
+                  setState(() {
+                    changeDiceFace();
+                  });
+                },
+              ),
+            )
+          ],
         ),
       ),
     );

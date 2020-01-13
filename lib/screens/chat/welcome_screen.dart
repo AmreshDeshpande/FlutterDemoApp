@@ -1,8 +1,8 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:i_am_rich/components/rounded_button.dart';
 import 'package:i_am_rich/screens/chat/login_screen.dart';
 import 'package:i_am_rich/screens/chat/registration_screen.dart';
-import 'package:i_am_rich/components/rounded_button.dart';
 
 class WelcomeScreen extends StatefulWidget {
   static String id = "welcome_screen";
@@ -33,6 +33,11 @@ class _WelcomeScreenState extends State<WelcomeScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        automaticallyImplyLeading: true,
+        title: Text('Chat'),
+      ),
       backgroundColor: Colors.white,
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.0),
@@ -52,6 +57,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                 TypewriterAnimatedTextKit(
                   text: ['Flash Chat'],
                   textStyle: TextStyle(
+                    color: Colors.black,
                     fontSize: 35.0,
                     fontWeight: FontWeight.w900,
                   ),
@@ -65,13 +71,17 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                 title: 'Log In',
                 color: Colors.lightBlue,
                 onPressed: () {
-                  Navigator.pushNamed(context, LoginScreen.id);
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return LoginScreen();
+                  }));
                 }),
             RoundedButton(
                 title: 'Register',
                 color: Colors.blueAccent,
                 onPressed: () {
-                  Navigator.pushNamed(context, RegistrationScreen.id);
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return RegistrationScreen();
+                  }));
                 }),
           ],
         ),

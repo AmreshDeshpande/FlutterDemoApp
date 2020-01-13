@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider(
         create: (context) => TaskData(),
         child: MaterialApp(
+          debugShowCheckedModeBanner: false,
           theme: ThemeData.dark().copyWith(
               primaryColor: Color(0xFF0A0E21),
               scaffoldBackgroundColor: Color(0xFF0A0E21),
@@ -34,7 +35,17 @@ class NavigationDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: IAmRich(),
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text('Home'),
+      ),
+      body: Container(
+        child: Center(
+            child: Text(
+          'Fultter Showcase App',
+          style: TextStyle(fontSize: 30.0),
+        )),
+      ),
       drawer: Drawer(
         child: ListView(
           // Important: Remove any padding from the ListView.

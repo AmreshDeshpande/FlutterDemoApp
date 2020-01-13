@@ -1,7 +1,8 @@
 import 'dart:io' show Platform;
-import 'package:flutter_spinkit/flutter_spinkit.dart';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 import '../services/coin_data.dart';
 
@@ -32,7 +33,7 @@ class _PriceScreenState extends State<PriceScreen> {
           //setState(() {
           selectedCurrency = value;
           getCurrencyPrice();
-         // });
+          // });
         });
   }
 
@@ -45,11 +46,11 @@ class _PriceScreenState extends State<PriceScreen> {
     return CupertinoPicker(
       itemExtent: 30.0,
       onSelectedItemChanged: (selectedIndex) {
-       // setState(() {
+        // setState(() {
         selectedCurrency = currenciesList[selectedIndex];
-          getCurrencyPrice();
+        getCurrencyPrice();
 
-       // });
+        // });
       },
       children: copertinoPickerItems,
       backgroundColor: Colors.lightBlue,
@@ -68,7 +69,7 @@ class _PriceScreenState extends State<PriceScreen> {
     double value = coinData['last'];
     setState(() {
       loading = false;
-      selectedCurrencyPrice =  value.toString();
+      selectedCurrencyPrice = value.toString();
     });
   }
 
@@ -76,6 +77,8 @@ class _PriceScreenState extends State<PriceScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: true,
+        centerTitle: true,
         title: Text('🤑 Coin Ticker'),
       ),
       body: Column(
@@ -107,10 +110,7 @@ class _PriceScreenState extends State<PriceScreen> {
             child: Container(
               child: Visibility(
                 visible: loading,
-                child: SpinKitDoubleBounce(
-                    color: Colors.white,
-                    size: 100.0
-                ),
+                child: SpinKitDoubleBounce(color: Colors.white, size: 100.0),
               ),
             ),
           ),

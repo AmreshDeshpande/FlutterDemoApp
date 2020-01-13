@@ -84,7 +84,9 @@ class _LoginScreenState extends State<LoginScreen> {
                         final user = await _auth.signInWithEmailAndPassword(
                             email: email, password: password);
                         if (user != null) {
-                          Navigator.pushNamed(context, ChatScreen.id);
+                          Navigator.push(context, MaterialPageRoute(builder: (context) {
+                            return ChatScreen();
+                          }));
                         }
                         setState(() {
                           loading = false;

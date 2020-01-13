@@ -43,7 +43,8 @@ class _QuizState extends State<Quiz> {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
-        title: Center(child: Text('Quiz')),
+        centerTitle: true,
+        title: Text('Quiz'),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,

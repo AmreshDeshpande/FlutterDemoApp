@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
+
 class Profile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        home: Scaffold(
+    return Scaffold(
       backgroundColor: Colors.teal,
+      appBar: AppBar(
+        backgroundColor: Colors.teal.shade900,
+        automaticallyImplyLeading: true,
+        centerTitle: true,
+        title: Text('Profile'),
+      ),
       body: SafeArea(
           child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -61,6 +67,6 @@ class Profile extends StatelessWidget {
               ))
         ],
       )),
-    ));
+    );
   }
 }
